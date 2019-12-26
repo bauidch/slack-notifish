@@ -20,6 +20,7 @@ DISTFILES += qml/slack-notifish.qml \
     qml/cover/CoverPage.qml \
     qml/js/slack.js \
     qml/pages/AboutPage.qml \
+    qml/pages/ChannelInfo.qml \
     qml/pages/MainPage.qml \
     qml/pages/SettingsPage.qml \
     rpm/slack-notifish.changes.in \

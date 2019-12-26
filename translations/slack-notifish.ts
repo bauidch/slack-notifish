@@ -2,6 +2,13 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name></name>
+    <message id="Vibration">
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AboutPage</name>
     <message>
         <source>About</source>
@@ -16,7 +23,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>version: 0.1</source>
+        <source>version: 0.3</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelInfo</name>
+    <message>
+        <source>Unread: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Infos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -50,11 +80,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Public Channels</source>
+        <source>Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Private Channels</source>
+        <source>No Channels, go to settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -77,15 +107,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>On Duty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>On Duty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Notification interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channelname</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel not found</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

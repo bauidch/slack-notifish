@@ -15,14 +15,11 @@ Copy your OAuth Access Token to the slack token section in the App.
 ## ToDo
 - Select own Notification sound
 - Use own Slack token inkl. Tests
-- own public and private Channels
+- Vibration
 - Test Notification
 - Test Alert Sound
-- Channel information
 - Better Cover
 - Release App in OpenRepos and Jolla Store
-- Better icon
-- Show unread count
 - Background Job
 - Delete Configuration option
 - Translation

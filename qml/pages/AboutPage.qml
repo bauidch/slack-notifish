@@ -26,7 +26,7 @@ Page {
                  }
             }
             Label {
-                text: qsTr("version: 0.1")
+                text: qsTr("version: 0.3")
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeMedium
                 anchors {
