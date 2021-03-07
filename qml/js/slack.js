@@ -5,74 +5,6 @@ function httpGet(url) {
     return xmlHttp;
 }
 
-//function get_public_channels(token) {
-//    var publicChannel = httpGet("https://slack.com/api/channels.list" + "?token=" + token + "&exclude_archived=true&exclude_members=true&pretty=1")
-
-//    console.log(publicChannel.responseText)
-//    try {
-//        var publicChannellJson = JSON.parse(publicChannel.responseText);
-//    } catch (e) {
-//        console.log("error: failed to parse ");
-//    }
-//    console.log(publicChannellJson.channels.length)
-//    for (var i = 0; i < publicChannellJson.channels.length; i++) {
-//        console.log(publicChannellJson.channels[i].name +" "+ publicChannellJson.channels[i].id);
-//    }
-//    return publicChannellJson
-//}
-
-//function get_public_channel_info(token, chat_id) {
-//    var publicChatInfo = httpGet("https://slack.com/api/channels.info" + "?token=" + token + "&channel=" + chat_id  + "&pretty=1")
-//    try {
-//        var publicChatInfoJson = JSON.parse(publicChatInfo.responseText);
-//    } catch (e) {
-//        console.log("error: failed to parse");
-//    }
-//    return publicChatInfoJson.channel.name
-//}
-
-//function get_unread_public(token, chat_id) {
-//    var publicChatInfo = httpGet("https://slack.com/api/channels.info" + "?token=" + token + "&channel=" + chat_id  + "&pretty=1")
-//    try {
-//        var privatChatJson = JSON.parse(publicChatInfo.responseText);
-//    } catch (e) {
-//        console.log("error: failed to parse");
-//    }
-//    return privatChatJson.channel.unread_count_display
-//}
-
-//function get_private_channels(token) {
-//    var privatChannel = httpGet("https://slack.com/api/groups.list" + "?token=" + token + "&types=private_channel")
-
-//    try {
-//        var privatChannelJson = JSON.parse(privatChannel.responseText);
-//    } catch (e) {
-//        console.log("error: failed to parse ");
-//    }
-//    return privatChannelJson
-//}
-
-//function get_unread_private(token, chat_id) {
-//    var privatChannelInfo = httpGet("https://slack.com/api/groups.info" + "?token=" + token + "&channel=" + chat_id  + "&pretty=1")
-//    try {
-//        var privatChannelInfoJson = JSON.parse(privatChannelInfo.responseText);
-//    } catch (e) {
-//        console.log("error: failed to parse ");
-//    }
-//    return privatChannelInfoJson.group.unread_count_display
-//}
-
-//function get_private_channel_info(token, chat_id) {
-//    var privatChannelInfo = httpGet("https://slack.com/api/groups.info" + "?token=" + token + "&channel=" + chat_id  + "&pretty=1")
-//    try {
-//        var privatChannelInfoJson = JSON.parse(privatChannelInfo.responseText);
-//    } catch (e) {
-//        console.log("error: failed to parse ");
-//    }
-//    return privatChannelInfoJson.group.name
-//}
-// @TODO use case to seperate public and private channel
-
 function get_channel_name(token, chat_id, chat_type) {
     switch(chat_type) {
       case "public":
@@ -88,31 +20,21 @@ function get_channel_name(token, chat_id, chat_type) {
           try {
               var privatChannelInfoJson = JSON.parse(privatChannelInfo.responseText);
           } catch (error) {
-              console.log("error: failed to parse ");
+              console.log("error: failed to parse");
           }
           return privatChannelInfoJson.group.name
     }
 }
 
 function get_unread(token, chat_id, chat_type) {
-    switch(chat_type) {
-      case "public":
-          var publicChatInfo = httpGet("https://slack.com/api/channels.info" + "?token=" + token + "&channel=" + chat_id  + "&pretty=1")
-          try {
-              var privatChatJson = JSON.parse(publicChatInfo.responseText);
-          } catch (e) {
-              console.log("error: failed to parse");
-          }
-          return privatChatJson.channel.unread_count_display
-      case "private":
-          var privatChannelInfo = httpGet("https://slack.com/api/groups.info" + "?token=" + token + "&channel=" + chat_id  + "&pretty=1")
-          try {
-              var privatChannelInfoJson = JSON.parse(privatChannelInfo.responseText);
-          } catch (erorr) {
-              console.log("error: failed to parse ");
-          }
-          return privatChannelInfoJson.group.unread_count_display
+
+    var channelHistory = httpGet("https://slack.com/api/conversations.history" + "?token=" + token + "&channel=" + chat_id  + "&unreads=true")
+    try {
+        var channelHistoryJson = JSON.parse(channelHistory.responseText);
+    } catch (erorr) {
+        console.log("error: failed to parse ");
     }
+    return channelHistoryJson.unread_count_display
 }
 
 function get_id(token, name, chat_type) {
