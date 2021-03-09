@@ -19,13 +19,14 @@ Your app should have the following rights
 
 Copy your OAuth Access Token to the slack token section in settings of the app.
 
-# Credits
+## Credits
 
 ## ToDo/ Ideas
 - Use own Slack token inkl. Tests
 - Use new Slack API  
 - Better Error Handling  
 - Vibration
+- Start Wizard for Slack Token
 - UI
   - Sort Function
   - Better Cover
