@@ -48,28 +48,3 @@ function get_id(token, chat_name, chat_type) {
     }
     return publicChannelArray
 }
-
-function get_channel_infos(token, chat_id, chat_type) {
-    switch(chat_type) {
-      case "public":
-          var publicChatInfo = httpGet("https://slack.com/api/channels.info" + "?token=" + token + "&channel=" + chat_id  + "&pretty=1")
-          //console.log(publicChatInfo.responseText)
-          try {
-              var publicChatInfoJson = JSON.parse(publicChatInfo.responseText);
-          } catch (e) {
-              console.log("error: failed to parse");
-          }
-          //console.log(publicChatInfoJson)
-          return publicChatInfoJson.channel.name
-      case "private":
-          var privatChannelInfo = httpGet("https://slack.com/api/groups.info" + "?token=" + token + "&channel=" + chat_id  + "&pretty=1")
-          //console.log(privatChannelInfo.responseText)
-          try {
-              var privatChannelInfoJson = JSON.parse(privatChannelInfo.responseText);
-          } catch (error) {
-              console.log("error: failed to parse ");
-          }
-          //console.log(privatChannelInfoJson)
-          return privatChannelInfoJson.group.name
-    }
-}
